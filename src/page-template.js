@@ -1,14 +1,14 @@
 const fs = require('fs');
 
-const generateInfo = (team)=> {
-  console.log(team);
+const generateInfo = (team) => {
+    console.log(team);
 
-    const html =[];
+    const html = [];
 
     const generateManager = manager => {
-      console.log(manager);
-      
-      let managerHTML = `
+        console.log(manager);
+
+        let managerHTML = `
         <div class='card' style='width:18rem;'>
           <div class='card-header'>
             ${manager.name} <br>
@@ -21,13 +21,13 @@ const generateInfo = (team)=> {
           </ul>
         </div>
       `;
-      html.push(managerHTML);
+        html.push(managerHTML);
     }
 
     const generateEngineer = engineer => {
-      console.log(engineer);
-      
-      let engineerHTML = `
+        console.log(engineer);
+
+        let engineerHTML = `
         <div class='card' style='width:18rem;'>
           <div class='card-header'>
             ${engineer.name} <br>
@@ -35,18 +35,18 @@ const generateInfo = (team)=> {
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">ID: ${engineer.id} </li>
-            <li class="list-group-item">Email: <span id='email'><a href='mailto:${engineer.emailAddress}'> ${engineer.emailAddress}</a></span></li>
-            <li class="list-group-item">Github Username: <a target='_blank' href='https://github.${engineer.githubUsername}'>${engineer.githubUsername} </a></li>
+            <li class="list-group-item">Email: <span id='email'><a href="mailto:${engineer.emailAddress}"> ${engineer.emailAddress}</a></span></li>
+            <li class="list-group-item">Github Username: <a target='_blank' href='https://github.com/${engineer.githubUsername}'>${engineer.githubUsername} </a></li>
           </ul>
         </div>
       `;
-      html.push(engineerHTML);
+        html.push(engineerHTML);
     }
 
     const generateIntern = intern => {
-      console.log(intern);
+        console.log(intern);
 
-      let internHTML = `
+        let internHTML = `
         <div class='card' style='width:18rem;'>
           <div class='card-header'>
             ${intern.name} <br>
@@ -59,29 +59,29 @@ const generateInfo = (team)=> {
           </ul>
         </div>
       `;
-      html.push(internHTML);
+        html.push(internHTML);
     }
 
     //create a loop for all of the team
-    for (let i = 0; i<team.length; i++) {
-      if (team[i].getRole() === 'Manager') {
-        generateManager(team[i]);
-      }
-      if (team[i].getRole() === 'Engineer') {
-        generateEngineer(team[i]);
-      }
-      if (team[i].getRole() === 'Intern') {
-        generateIntern(team[i]);
-      } 
+    for (let i = 0; i < team.length; i++) {
+        if (team[i].getRole() === 'Manager') {
+            generateManager(team[i]);
+        }
+        if (team[i].getRole() === 'Engineer') {
+            generateEngineer(team[i]);
+        }
+        if (team[i].getRole() === 'Intern') {
+            generateIntern(team[i]);
+        }
     }
 
     //join the html
     return html.join('');
-  }
+}
 
 module.exports = team => {
 
-  return `
+    return `
   <!DOCTYPE html>
   <html lang='en'>
   
@@ -93,7 +93,8 @@ module.exports = team => {
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></link>  
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
       <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="style.css">
+      <script src="https://kit.fontawesome.com/493bea5fd9.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
       </head>
 
   <body>
@@ -104,7 +105,6 @@ module.exports = team => {
   ${generateInfo(team)}
 </main>
 
-<script src="https://kit.fontawesome.com/493bea5fd9.js" crossorigin="anonymous"></script>
 </body>
 </html>
 `;
