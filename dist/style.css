@@ -1,0 +1,40 @@
+header {
+    color: #ffffff;
+    background-color: #3262ff;
+    font-size: 2em;
+    margin: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 15px;
+    padding: 10px;
+}
+
+.card {
+    padding: 10px;
+    margin: 15px;
+}
+
+.card-header {
+    color: #ffffff;
+    background-color: #3262ff;
+}
+
+.list-group {
+    color: #000000;
+}
+
+.list-group-item {
+    white-space: nowrap;
+    overflow: visible;
+}
+
+#email {
+    color: #3262ff;
+}
