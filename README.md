@@ -38,4 +38,5 @@ N/A
 Download the code and open terminal and run node index.js. Input all information and open index.html
 see walthrough video demo:
 
-![Demo video file](./assets/NF-team-profile-generator-demo.mp4)
+![Demo video file](https://user-images.githubusercontent.com/69065671/152664851-ac5155e4-21e0-487a-93d8-ad269074e77c.mp4)
+
